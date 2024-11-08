@@ -3,11 +3,13 @@ package com.example.firebasechatapp.adapter
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebasechatapp.ChatActivity
 import com.example.firebasechatapp.data.User
 import com.example.firebasechatapp.databinding.ListItemBinding
+
 class DataAdapter(
     private val list: ArrayList<User>,
     private val context: Context
@@ -26,13 +28,20 @@ class DataAdapter(
         val user = list[position]
         holder.bind(user)
 
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, ChatActivity::class.java).apply {
-                putExtra("name", user.name)
-                putExtra("uid", user.uid)
+        if (position == list.size - 1) {
+            holder.itemView.visibility = View.GONE
+        } else {
+            holder.itemView.visibility = View.VISIBLE
+            holder.itemView.setOnClickListener {
+                val intent = Intent(context, ChatActivity::class.java).apply {
+                    putExtra("name", user.name)
+                    putExtra("uid", user.uid)
+                }
+                context.startActivity(intent)
             }
-            context.startActivity(intent)
         }
+
+
     }
 
     class MyViewHolder(private val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {

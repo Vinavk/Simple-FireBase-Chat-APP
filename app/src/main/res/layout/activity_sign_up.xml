@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/signup_img"
     tools:context=".MainActivity">
 
     <EditText
@@ -13,6 +14,7 @@
         android:layout_marginTop="224dp"
         android:background="@drawable/edit_txt_bkgrnd"
         android:hint=" name"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,12 +31,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/mail_txt"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/mail_txt"
         android:layout_width="362dp"
+        android:textColor="@color/white"
         android:layout_height="68dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/edit_txt_bkgrnd"
